@@ -90,7 +90,7 @@ MSE_3 = sum(residuals(model_3)^2) / (n-2)
 
 ```
 
-The MSE for model 1 is `r round(MSE_1, 5)`, MSE for model 2 is `r round(MSE_2, 5)`, and MSE for model 3 is `r round(MSE_3, 5)`.
+The MSE for model 1 is `r round(MSE_1, 5)`, MSE for model 2 is `r round(MSE_2, 5)`, and MSE for model 3 is `r round(MSE_3, 5)`. We can see that the MSE for model 2 is the smallest which means out of the three predictor varibales hospital beds had the smallest variablility around the fitted regression line.
 
 
 ### c
