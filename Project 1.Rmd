@@ -42,6 +42,9 @@ The estimated regression functions are:
 
 3. The number of active physicians in relation to total personal income is estimated by $\hat{Y}=$`r round(model_3$coefficients[[1]], 5)`+`r round(model_3$coefficients[[2]], 5)`$X$.
 
+
+### b
+
 ```{r}
 #b
 par(mfrow = c(2,2))
@@ -75,13 +78,20 @@ abline(model_3, col="red")
 
 ```
 
-### b
+Based on the three graphs a linear fit would only provide a good fit for the graph of when Population is the predictor variable since for that one the data points are all near the line where for the other graphs the linear regression line is way off from the data points.
 
 
 ```{r}
 # c
+n = nrow(cdi)
+MSE_1 = sum(residuals(model_1)^2) / (n-2)
+MSE_2 = sum(residuals(model_2)^2) / (n-2)
+MSE_3 = sum(residuals(model_3)^2) / (n-2)
 
 ```
+
+The MSE for model 1 is `r round(MSE_1, 5)`, MSE for model 2 is `r round(MSE_2, 5)`, and MSE for model 3 is `r round(MSE_3, 5)`.
+
 
 ### c
 
