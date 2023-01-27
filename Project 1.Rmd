@@ -1,0 +1,70 @@
+---
+title: "STA 108 Project 1"
+author: "Noe Velasquez, ____, and ______"
+date: "2023-01-27"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Introduction
+
+
+
+## 1
+
+```{r}
+# 1
+# a
+cdi = read.table("CDI.txt")
+colnames(cdi) <- c("id_num", "county", 
+                   "state", "land_area",
+                   "pop_total", "pop_18_34", 
+                   "pop_65_old", "active_physicians", 
+                   "hospital_beds", "serious_crimes",
+                   "pct_hsgrad", "pct_bachelors", 
+                   "pct_poverty", "pct_unemp", 
+                   "income_percap", "income_total",
+                   "region")
+model_1 = lm(active_physicians ~ pop_total, data = cdi)
+model_2 = lm(active_physicians ~ hospital_beds, data = cdi)
+model_3 = lm(active_physicians ~ income_total, data = cdi)
+
+
+
+```
+
+### a
+
+
+```{r}
+#b
+par(mfrow = c(2,2))
+plot(cdi$pop_total, cdi$active_physicians)
+abline(model_1)
+
+
+plot(cdi$hospital_beds, cdi$active_physicians)
+abline(model_2)
+
+
+plot(cdi$income_total, cdi$active_physicians)
+abline(model_3)
+
+
+
+```
+
+### b
+
+
+```{r}
+# c
+
+```
+
+### c
+
+
+
