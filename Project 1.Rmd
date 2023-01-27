@@ -30,27 +30,46 @@ colnames(cdi) <- c("id_num", "county",
 model_1 = lm(active_physicians ~ pop_total, data = cdi)
 model_2 = lm(active_physicians ~ hospital_beds, data = cdi)
 model_3 = lm(active_physicians ~ income_total, data = cdi)
-
-
-
 ```
 
 ### a
 
+The estimated regression functions are:
+
+1. The number of active physicians in relation to total population is estimated by $\hat{Y}=$`r round(model_1$coefficients[[1]], 5)`+`r round(model_1$coefficients[[2]], 5)`$X$.
+
+2. The number of active physicians in relation to number of hospital beds is estimated by $\hat{Y}=$`r round(model_2$coefficients[[1]], 5)`+`r round(model_2$coefficients[[2]], 5)`$X$.
+
+3. The number of active physicians in relation to total personal income is estimated by $\hat{Y}=$`r round(model_3$coefficients[[1]], 5)`+`r round(model_3$coefficients[[2]], 5)`$X$.
 
 ```{r}
 #b
 par(mfrow = c(2,2))
-plot(cdi$pop_total, cdi$active_physicians)
-abline(model_1)
+plot(cdi$pop_total, cdi$active_physicians,
+    main = "Active Physicians vs Population Total",
+    xlab = "Population(Millions)",
+    ylab = "Active Physicans",
+    pch = 20,
+    col = rgb(red=0, green = 0, blue = 0, alpha = 0.1))
+abline(model_1, col="red")
 
 
-plot(cdi$hospital_beds, cdi$active_physicians)
-abline(model_2)
+plot(cdi$pop_total, cdi$hospital_beds,
+    main = "Active Physicians vs Population Total",
+    xlab = "Hospital Beds",
+    ylab = "Active Physicans",
+    pch = 20,
+    col = rgb(red=0, green = 0, blue = 0, alpha = 0.1))
+abline(model_2, col="red")
 
 
-plot(cdi$income_total, cdi$active_physicians)
-abline(model_3)
+plot(cdi$pop_total, cdi$income_total,
+    main = "Active Physicians vs Population Total",
+    xlab = "Total Income",
+    ylab = "Active Physicans",
+    pch = 20,
+    col = rgb(red=0, green = 0, blue = 0, alpha = 0.1))
+abline(model_3, col="red")
 
 
 
