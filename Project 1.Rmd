@@ -46,7 +46,7 @@ The estimated regression functions are:
 #b
 par(mfrow = c(2,2))
 plot(cdi$pop_total, cdi$active_physicians,
-    main = "Active Physicians vs Population Total",
+    main = "Active Physicians vs Population",
     xlab = "Population(Millions)",
     ylab = "Active Physicans",
     pch = 20,
@@ -55,7 +55,7 @@ abline(model_1, col="red")
 
 
 plot(cdi$pop_total, cdi$hospital_beds,
-    main = "Active Physicians vs Population Total",
+    main = "Active Physicians vs Hospital beds",
     xlab = "Hospital Beds",
     ylab = "Active Physicans",
     pch = 20,
@@ -64,7 +64,7 @@ abline(model_2, col="red")
 
 
 plot(cdi$pop_total, cdi$income_total,
-    main = "Active Physicians vs Population Total",
+    main = "Active Physicians vs Income",
     xlab = "Total Income",
     ylab = "Active Physicans",
     pch = 20,
